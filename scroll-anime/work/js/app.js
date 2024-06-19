@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded",function(){
+document.addEventListener("DOMContentLoaded",()=>{
   const observer = new IntersectionObserver((entrise)=>{
     entrise.forEach((entry)=>{
       if (entry.isIntersecting){
@@ -7,8 +7,9 @@ document.addEventListener("DOMContentLoaded",function(){
         entry.target.classList.remove("displayed");
       }
     });
-  },{threshold:1,})
-  document.querySelectorAll(".box").forEach((box)=>{
+  },{threshold:1});
+  const boxes = document.querySelectorAll('.box')
+  boxes.forEach((box)=>{
     observer.observe(box);
   });
 });
